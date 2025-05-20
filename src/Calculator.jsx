@@ -1,19 +1,32 @@
-import React from "react";
+import React from 'react'
 
-function add(a,b){
-    return a+b
+function Calculator(props){
+    var {num1,num2,oper} = props
+    var result = NaN
+    switch(oper){
+        case '+':
+            result = num1+num2
+            break;
+        case '-':
+            result = num1-num2
+            break;
+        case '*':
+            result = num1*num2
+            break;
+        case '/':
+            result = num1/num2
+            break;
+        default:
+            result =NaN
+            break;
+        
+        
+    }
+    console.log(props)
+    return(
+        <>
+            <p>The {oper} of {num1} and {num2} is {result}</p>
+        </>
+    )
 }
-
-function subtract(a,b){
-    return a-b
-}
-
-function multiply(a,b){
-    return a*b
-}
-
-function divide(a,b){
-    return a/b
-}
-
-export {add,subtract,divide,multiply}
+export default Calculator
